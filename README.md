@@ -23,3 +23,5 @@ Use your favorite text editor to edit settings.yml. Make sure
 Start the server
 
     ./start
+
+For more info, open up `app.rb` and inspect /method1 and /method2
