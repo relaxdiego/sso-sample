@@ -23,6 +23,8 @@ end
 #=====================
 # MAIN APP LOGIC 
 #=====================
+
+# Root path
 get '/' do
   "
   <html>
@@ -48,7 +50,8 @@ get '/method1' do
   # Request the login screen for the dashboard
   result = mcloud.get('/')
 
-  authenticity_token = result.body.match(/authenticity.+value\="(\S+)"/)[1]
+  # Extract the authenticity token from the body
+  authenticity_token = result.body.match(/authenticity_token.+value\="(\S+)"/)[1]
 
   # Return HTML with self-submitting form
   <<-EOF
@@ -80,6 +83,7 @@ get '/method2' do
   # Request the login screen for the dashboard
   result = mcloud.get('/')
 
+  # Extract the authenticity token from the body
   authenticity_token = result.body.match(/authenticity.+value\="(\S+)"/)[1]
   
   # Post the user's credentials to mCloud
