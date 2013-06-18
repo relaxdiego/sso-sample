@@ -84,7 +84,7 @@ get '/method2' do
   result = mcloud.get('/')
 
   # Extract the authenticity token from the body
-  authenticity_token = result.body.match(/authenticity.+value\="(\S+)"/)[1]
+  authenticity_token = result.body.match(/authenticity_token.+value\="(\S+)"/)[1]
   
   # Post the user's credentials to mCloud
   result = mcloud.post('/') do |request|
