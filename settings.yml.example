@@ -1,0 +1,4 @@
+mcloud_url: https://dashboard.mycloud.com
+sample_user:
+    username: myusername
+    password: mypassword
